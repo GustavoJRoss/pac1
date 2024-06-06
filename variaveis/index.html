@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - Católica de Santa Catarina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../iconeCatolica.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../logica/index.html">Iniciando na Lógica</a></li>
+                <li><a href="../linguagemC/index.html">A linguagem C</a></li>
+                <li><a href="../bibliotecasC/index.html">Bibliotecas básicas em C</a></li>
+                <li><a href="../variaveis/index.html">Declaração de variáveis</a></li>
+                <li><a href="../entradasaida/index.html">Comandos de Entrada e Saída</a></li>
+                <li><a href="../condicional/index.html">Condicional</a></li>
+                <li><a href="../lacosrepeticao/index.html">Laços de Repetição</a></li>
+                <li><a href="../arduino/index.html">Conhecendo o Arduino</a></li>
+                <li><a href="../componentesarduino/index.html">Componentes básicos do Arduino</a></li>
+                <li><a href="../simuladoresrobotica/index.html">Simuladores de robótica</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Declaração de Variáveis em C</h1>
+            <section id="introducao">
+                <h2>Introdução</h2>
+                <p>Variáveis são elementos fundamentais em qualquer linguagem de programação. Elas são usadas para armazenar dados que podem ser manipulados e utilizados ao longo da execução do programa. Em C, a declaração de variáveis exige que seja especificado o tipo de dado que será armazenado.</p>
+            </section>
+            <section id="tipos-variaveis">
+                <h2>Tipos de Variáveis</h2>
+                <p>Na linguagem C, as variáveis podem ser de diferentes tipos, cada um adequado para armazenar um tipo específico de dado. Alguns dos tipos mais comuns são:</p>
+                <ul>
+                    <li><strong>int</strong>: Armazena números inteiros.</li>
+                    <li><strong>float</strong>: Armazena números de ponto flutuante de precisão simples.</li>
+                    <li><strong>double</strong>: Armazena números de ponto flutuante de precisão dupla.</li>
+                    <li><strong>char</strong>: Armazena um único caractere.</li>
+                    <li><strong>void</strong>: Tipo especial usado principalmente em ponteiros e funções.</li>
+                </ul>
+            </section>
+            <section id="regras-nomeacao">
+                <h2>Regras de Nomeação</h2>
+                <p>Os nomes das variáveis devem seguir certas regras e convenções para serem válidos:</p>
+                <ul>
+                    <li>Devem começar com uma letra ou um sublinhado (_).</li>
+                    <li>Podem conter letras, dígitos e sublinhados.</li>
+                    <li>Não podem ser palavras-chave da linguagem C.</li>
+                    <li>Devem ser descritivos para facilitar a compreensão do código.</li>
+                </ul>
+            </section>
+            <section id="escopo-duracao">
+                <h2>Escopo e Duração</h2>
+                <p>O escopo de uma variável refere-se à parte do programa onde a variável pode ser acessada. A duração de uma variável refere-se ao tempo durante o qual a variável retém seu valor. Existem três tipos principais de escopo e duração em C:</p>
+                <ul>
+                    <li><strong>Variáveis Locais:</strong> Declaradas dentro de funções ou blocos de código e só podem ser acessadas dentro desses contextos.</li>
+                    <li><strong>Variáveis Globais:</strong> Declaradas fora de todas as funções e podem ser acessadas por qualquer parte do programa.</li>
+                    <li><strong>Variáveis Estáticas:</strong> Podem ser locais ou globais, mas retêm seus valores entre chamadas de função.</li>
+                </ul>
+            </section>
+            <section id="exemplos">
+                <h2>Exemplos de Código</h2>
+                <h3>Declaração e Inicialização</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    float altura = 1.75;
+    char inicial = 'A';
+    
+    printf("Idade: %d\n", idade);
+    printf("Altura: %.2f\n", altura);
+    printf("Inicial: %c\n", inicial);
+    
+    return 0;
+}</code></pre>
+                <h3>Escopo de Variáveis</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int global = 10;
+
+void funcao() {
+    int local = 5;
+    printf("Variável local: %d\n", local);
+    printf("Variável global: %d\n", global);
+}
+
+int main() {
+    funcao();
+    printf("Variável global no main: %d\n", global);
+    return 0;
+}</code></pre>
+                <h3>Variáveis Estáticas</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+void funcao() {
+    static int contador = 0;
+    contador++;
+    printf("Contador: %d\n", contador);
+}
+
+int main() {
+    funcao();
+    funcao();
+    funcao();
+    return 0;
+}</code></pre>
+            </section>
+        </section>
+        <aside class="sidebar-right">
+            <h3>Neste artigo</h3>
+            <ul>
+                <li><a href="#introducaor">Introdução</a></li>
+                <li><a href="#tipos-variaveis">Tipos de Variáveis</a></li>
+                <li><a href="#regras-nomeacao">Regras de Nomeação</a></li>
+                <li><a href="#escopo-duracao">Escopo e Duração</a></li>
+                <li><a href="#exemplos">Exemplos</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

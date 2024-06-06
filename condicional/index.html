@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - Católica de Santa Catarina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../iconeCatolica.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../logica/index.html">Iniciando na Lógica</a></li>
+                <li><a href="../linguagemC/index.html">A linguagem C</a></li>
+                <li><a href="../bibliotecasC/index.html">Bibliotecas básicas em C</a></li>
+                <li><a href="../variaveis/index.html">Declaração de variáveis</a></li>
+                <li><a href="../entradasaida/index.html">Comandos de Entrada e Saída</a></li>
+                <li><a href="../condicional/index.html">Condicional</a></li>
+                <li><a href="../lacosrepeticao/index.html">Laços de Repetição</a></li>
+                <li><a href="../arduino/index.html">Conhecendo o Arduino</a></li>
+                <li><a href="../componentesarduino/index.html">Componentes básicos do Arduino</a></li>
+                <li><a href="../simuladoresrobotica/index.html">Simuladores de robótica</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Condicionais em C</h1>
+            <section id="introducao">
+                <h2>Introdução</h2>
+                <p>As estruturas condicionais permitem que um programa tome decisões baseadas em condições específicas. Em C, as principais estruturas condicionais são <code>if</code>, <code>if-else</code>, <code>else-if</code> e <code>switch</code>. Estas estruturas ajudam a controlar o fluxo de execução do programa, permitindo que certas partes do código sejam executadas somente quando determinadas condições são atendidas.</p>
+            </section>
+            <section id="if">
+                <h2>Estrutura if</h2>
+                <p>A estrutura <code>if</code> é usada para executar um bloco de código se uma condição específica for verdadeira. Se a condição for falsa, o bloco de código é ignorado.</p>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 18;
+    
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    }
+    
+    return 0;
+}</code></pre>
+            </section>
+            <section id="if-else">
+                <h2>Estrutura if-else</h2>
+                <p>A estrutura <code>if-else</code> é uma extensão da estrutura <code>if</code>. Ela permite executar um bloco de código se a condição for verdadeira e outro bloco se a condição for falsa.</p>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 16;
+    
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    } else {
+        printf("Você é menor de idade.\n");
+    }
+    
+    return 0;
+}</code></pre>
+            </section>
+            <section id="else-if">
+                <h2>Estrutura else-if</h2>
+                <p>A estrutura <code>else-if</code> permite testar múltiplas condições. Se a primeira condição for falsa, a próxima condição é testada, e assim por diante, até que uma condição verdadeira seja encontrada ou que todas as condições sejam testadas.</p>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int nota = 75;
+    
+    if (nota >= 90) {
+        printf("Nota A.\n");
+    } else if (nota >= 80) {
+        printf("Nota B.\n");
+    } else if (nota >= 70) {
+        printf("Nota C.\n");
+    } else if (nota >= 60) {
+        printf("Nota D.\n");
+    } else {
+        printf("Nota F.\n");
+    }
+    
+    return 0;
+}</code></pre>
+            </section>
+            <section id="switch">
+                <h2>Estrutura switch</h2>
+                <p>A estrutura <code>switch</code> é usada para testar a igualdade de uma variável contra uma lista de valores. Cada valor é chamado de "case". Se a variável coincidir com um case, o bloco de código correspondente é executado.</p>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int dia = 3;
+    
+    switch (dia) {
+        case 1:
+            printf("Domingo.\n");
+            break;
+        case 2:
+            printf("Segunda-feira.\n");
+            break;
+        case 3:
+            printf("Terça-feira.\n");
+            break;
+        case 4:
+            printf("Quarta-feira.\n");
+            break;
+        case 5:
+            printf("Quinta-feira.\n");
+            break;
+        case 6:
+            printf("Sexta-feira.\n");
+            break;
+        case 7:
+            printf("Sábado.\n");
+            break;
+        default:
+            printf("Dia inválido.\n");
+    }
+    
+    return 0;
+}</code></pre>
+            </section>
+            <section id="exemplos">
+                <h2>Exemplos de Código</h2>
+                <h3>Exemplo com if e if-else</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    
+    if (idade >= 18) {
+        printf("Você é maior de idade.\n");
+    } else {
+        printf("Você é menor de idade.\n");
+    }
+    
+    return 0;
+}</code></pre>
+                <h3>Exemplo com else-if</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float temperatura;
+    
+    printf("Digite a temperatura em graus Celsius: ");
+    scanf("%f", &temperatura);
+    
+    if (temperatura >= 30) {
+        printf("Está muito quente.\n");
+    } else if (temperatura >= 20) {
+        printf("O tempo está agradável.\n");
+    } else if (temperatura >= 10) {
+        printf("Está frio.\n");
+    } else {
+        printf("Está muito frio.\n");
+    }
+    
+    return 0;
+}</code></pre>
+                <h3>Exemplo com switch</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int opcao;
+    
+    printf("Escolha uma opção (1-3): ");
+    scanf("%d", &opcao);
+    
+    switch (opcao) {
+        case 1:
+            printf("Você escolheu a opção 1.\n");
+            break;
+        case 2:
+            printf("Você escolheu a opção 2.\n");
+            break;
+        case 3:
+            printf("Você escolheu a opção 3.\n");
+            break;
+        default:
+            printf("Opção inválida.\n");
+    }
+    
+    return 0;
+}</code></pre>
+            </section>
+        </section>
+        <aside class="sidebar-right">
+            <h3>Neste artigo</h3>
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#if">If</a></li>
+                <li><a href="#if-else">If Else</a></li>
+                <li><a href="#else-if">else-if</a></li>   
+                <li><a href="#switch">Switch</a></li>                
+                <li><a href="#exemplos">Exemplos</a></li>                
+            </ul>
+        </aside>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

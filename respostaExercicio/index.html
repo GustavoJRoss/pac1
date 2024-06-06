@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado - Lógica de Programação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <h1>Resultado do Exercício</h1>
+            <p id="resultText"></p>
+            <div class="progress-circle" id="progressCircle">
+                <svg width="200" height="200">
+                    <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" class="background"></circle>
+                    <circle cx="100" cy="100" r="90" stroke-width="20" fill="none" class="progress" id="progress"></circle>
+                </svg>
+                <p class="porcentagem" id="porcentagem"></p>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Função para obter os parâmetros da URL
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const queries = queryString.split('&');
+            for (const query of queries) {
+                const [key, value] = query.split('=');
+                params[key] = decodeURIComponent(value);
+            }
+            return params;
+        }
+
+        const params = getQueryParams();
+        const score = parseInt(params.score) || 0;
+        const total = parseInt(params.total) || 0;
+        const percentage = (score / total) * 100;
+
+        document.getElementById('resultText').innerText = `Você acertou ${score} de ${total} questões!`;
+        document.getElementById('porcentagem').innerText = `${percentage}%`
+
+        // Atualizar o círculo de progresso
+        const progressCircle = document.getElementById('progress');
+        const radius = progressCircle.r.baseVal.value;
+        const circumference = 2 * Math.PI * radius;
+
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = circumference;
+
+        function setProgress(percent) {
+            const offset = circumference - (percent / 100) * circumference;
+            progressCircle.style.strokeDashoffset = offset;
+        }
+
+        setProgress(percentage);
+    </script>
+</body>
+</html>

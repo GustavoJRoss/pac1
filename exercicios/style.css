@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a0c1f;
+    padding: 0px 100px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo img {
+    width: 125px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul li a:hover{
+    border-bottom: white 2px solid;
+    transition: 0.4s;
+}
+.theme-switcher input {
+    padding: 5px;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+}
+
+
+.content {
+    width: 60%;
+    padding: 20px  100px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content p, .content ul {
+    margin-bottom: 20px;
+}
+
+.question{
+    background-color: rgb(35, 35, 35);
+    border-radius: 10px;
+    padding: 5px 30px;
+}
+
+.question h3{
+    margin-left: 12px;
+}
+
+.questionbox{
+    background-color: rgb(25, 25, 25);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.answer{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.questions{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.questions p{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.submit{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+
+.finalizeButton{
+    text-decoration: none;
+    color: white;
+    border-radius: 10px;
+    background-color:#e74c3c;
+    padding: 10px 20px;
+    max-width: max-content;
+    border: 0px;
+}
+
+.finalizeButton:hover{
+    background-color: #b42718;
+    transition: 0.5s;
+}
+
+input{
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #242222;
+  border: 2px solid #393737;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+  
+
+input:checked {
+    background-color:transparent;
+    border-color: #b42718;
+}
+  
+input:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 6px;
+    width: 5px;
+    height: 10px;
+    border: solid #b42718;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin: 0px 2px
+}

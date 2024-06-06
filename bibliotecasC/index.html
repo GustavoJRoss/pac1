@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - Católica de Santa Catarina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../iconeCatolica.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../logica/index.html">Iniciando na Lógica</a></li>
+                <li><a href="../linguagemC/index.html">A linguagem C</a></li>
+                <li><a href="../bibliotecasC/index.html">Bibliotecas básicas em C</a></li>
+                <li><a href="../variaveis/index.html">Declaração de variáveis</a></li>
+                <li><a href="../entradasaida/index.html">Comandos de Entrada e Saída</a></li>
+                <li><a href="../condicional/index.html">Condicional</a></li>
+                <li><a href="../lacosrepeticao/index.html">Laços de Repetição</a></li>
+                <li><a href="../arduino/index.html">Conhecendo o Arduino</a></li>
+                <li><a href="../componentesarduino/index.html">Componentes básicos do Arduino</a></li>
+                <li><a href="../simuladoresrobotica/index.html">Simuladores de robótica</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Bibliotecas da Linguagem C</h1>
+            <section id="bibliotecasIntroducao">
+                <h2>Introdução</h2>
+                <p>As bibliotecas da linguagem C são conjuntos de funções e macros que facilitam o desenvolvimento de programas ao fornecer funcionalidades prontas para uso. As bibliotecas padrão são distribuídas junto com os compiladores de C e abrangem uma ampla gama de operações, desde manipulação de strings até operações matemáticas complexas.</p>
+            </section>
+            <section id="bibliotecasBibliotecas">
+                <h2>Bibliotecas Padrão</h2>
+                <p>A linguagem C possui várias bibliotecas padrão que são frequentemente utilizadas no desenvolvimento de software. Aqui estão algumas das mais importantes:</p>
+                <h3>stdio.h</h3>
+                <p>A biblioteca <code>stdio.h</code> fornece funções para entrada e saída padrão, como <code>printf</code> e <code>scanf</code>.</p>
+                <pre><code>#include &lt;stdio.h&gt;</code></pre>
+                <h3>stdlib.h</h3>
+                <p>A biblioteca <code>stdlib.h</code> oferece funções para alocação de memória, controle de processos, conversões e outras operações gerais. Exemplos de funções incluem <code>malloc</code>, <code>free</code>, <code>atoi</code> e <code>rand</code>.</p>
+                <pre><code>#include &lt;stdlib.h&gt;</code></pre>
+                <h3>string.h</h3>
+                <p>A biblioteca <code>string.h</code> contém funções para manipulação de strings, como <code>strlen</code>, <code>strcpy</code>, <code>strcmp</code> e <code>strcat</code>.</p>
+                <pre><code>#include &lt;string.h&gt;</code></pre>
+                <h3>math.h</h3>
+                <p>A biblioteca <code>math.h</code> oferece funções matemáticas, incluindo operações como <code>sqrt</code>, <code>pow</code>, <code>sin</code>, <code>cos</code>, e <code>tan</code>.</p>
+                <pre><code>#include &lt;math.h&gt;</code></pre>
+                <h3>time.h</h3>
+                <p>A biblioteca <code>time.h</code> fornece funções para manipulação de data e hora, como <code>time</code>, <code>difftime</code> e <code>strftime</code>.</p>
+                <pre><code>#include &lt;time.h&gt;</code></pre>
+            </section>
+            <section id="bibliotecasExemplos">
+                <h2>Exemplos de Uso</h2>
+                <h3>Exemplo com stdio.h</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Digite um número: ");
+    int numero;
+    scanf("%d", &numero);
+    printf("Você digitou: %d\n", numero);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com stdlib.h</h3>
+                <pre><code>#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int *array = malloc(5 * sizeof(int));
+    if (array == NULL) {
+        printf("Falha na alocação de memória\n");
+        return 1;
+    }
+    for (int i = 0; i < 5; i++) {
+        array[i] = i * i;
+    }
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+    free(array);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com string.h</h3>
+                <pre><code>#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    char str1[20] = "Hello";
+    char str2[20] = "World";
+    strcat(str1, str2);
+    printf("Concatenated string: %s\n", str1);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com math.h</h3>
+                <pre><code>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    double result = sqrt(25.0);
+    printf("A raiz quadrada de 25 é: %.2f\n", result);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com time.h</h3>
+                <pre><code>#include &lt;time.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    printf("Data e hora atual: %d-%02d-%02d %02d:%02d:%02d\n",
+           tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday,
+           tm.tm_hour, tm.tm_min, tm.tm_sec);
+    return 0;
+}</code></pre>
+            </section>
+        </section>
+        <aside class="sidebar-right">
+            <h3>Neste artigo</h3>
+            <ul>
+                <li><a href="#bibliotecasIntrodução">Introdução</a></li>
+                <li><a href="#bibliotecasBibliotecas">Bibliotecas</a></li>
+                <li><a href="#bibliotecasExemplos">Exemplos</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

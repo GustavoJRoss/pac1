@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - Católica de Santa Catarina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../iconeCatolica.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../logica/index.html">Iniciando na Lógica</a></li>
+                <li><a href="../linguagemC/index.html">A linguagem C</a></li>
+                <li><a href="../bibliotecasC/index.html">Bibliotecas básicas em C</a></li>
+                <li><a href="../variaveis/index.html">Declaração de variáveis</a></li>
+                <li><a href="../entradasaida/index.html">Comandos de Entrada e Saída</a></li>
+                <li><a href="../condicional/index.html">Condicional</a></li>
+                <li><a href="../lacosrepeticao/index.html">Laços de Repetição</a></li>
+                <li><a href="../arduino/index.html">Conhecendo o Arduino</a></li>
+                <li><a href="../componentesarduino/index.html">Componentes básicos do Arduino</a></li>
+                <li><a href="../simuladoresrobotica/index.html">Simuladores de robótica</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Comandos de Entrada e Saída em C</h1>
+            <section id="introducao">
+                <h2>Introdução</h2>
+                <p>Os comandos de entrada e saída são fundamentais em qualquer linguagem de programação, pois permitem a interação do programa com o usuário e a manipulação de dados externos. Em C, esses comandos são realizados principalmente através das funções da biblioteca padrão <code>stdio.h</code>.</p>
+            </section>
+            <section id="entrada">
+                <h2>Comandos de Entrada</h2>
+                <p>Os comandos de entrada permitem que o programa receba dados do usuário ou de outras fontes externas. Os comandos mais comuns são:</p>
+                <ul>
+                    <li><strong>scanf</strong>: Lê dados da entrada padrão (normalmente o teclado).</li>
+                    <li><strong>gets</strong>: Lê uma linha inteira de texto da entrada padrão (deprecated, use <code>fgets</code>).</li>
+                    <li><strong>fgets</strong>: Lê uma linha de texto de um fluxo de entrada, recomendado para evitar problemas de buffer overflow.</li>
+                </ul>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade;
+    printf("Digite sua idade: ");
+    scanf("%d", &idade);
+    printf("Você digitou: %d\n", idade);
+    return 0;
+}</code></pre>
+            </section>
+            <section id="saida">
+                <h2>Comandos de Saída</h2>
+                <p>Os comandos de saída permitem que o programa envie dados para o usuário ou para outras fontes externas. Os comandos mais comuns são:</p>
+                <ul>
+                    <li><strong>printf</strong>: Escreve dados na saída padrão (normalmente a tela).</li>
+                    <li><strong>puts</strong>: Escreve uma string seguida por uma nova linha na saída padrão.</li>
+                    <li><strong>fprintf</strong>: Escreve dados em um fluxo de saída específico.</li>
+                </ul>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int idade = 25;
+    printf("Idade: %d\n", idade);
+    puts("Esta é uma mensagem com puts.");
+    return 0;
+}</code></pre>
+            </section>
+            <section id="exemplos">
+                <h2>Exemplos de Código</h2>
+                <h3>Exemplo com scanf e printf</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float altura;
+    printf("Digite sua altura em metros: ");
+    scanf("%f", &altura);
+    printf("Sua altura é: %.2f metros\n", altura);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com fgets e puts</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    char nome[50];
+    printf("Digite seu nome: ");
+    fgets(nome, 50, stdin);
+    printf("Olá, ");
+    puts(nome);
+    return 0;
+}</code></pre>
+                <h3>Exemplo com fprintf</h3>
+                <pre><code>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *file = fopen("saida.txt", "w");
+    if (file == NULL) {
+        printf("Erro ao abrir o arquivo!\n");
+        return 1;
+    }
+    fprintf(file, "Esta é uma mensagem escrita no arquivo.\n");
+    fclose(file);
+    printf("Mensagem escrita no arquivo com sucesso.\n");
+    return 0;
+}</code></pre>
+            </section>
+        </section>
+        <aside class="sidebar-right">
+            <h3>Neste artigo</h3>
+            <ul>
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#entrada">Entradas</a></li>
+                <li><a href="#saida">Saídas</a></li>
+                <li><a href="#exemplos">Exemplos</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: linear-gradient(black, rgb(20, 0, 0));
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a0c1f;
+    padding: 0px 100px;
+}
+
+header .logo img {
+    width: 125px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+header nav ul li a:hover{
+    border-bottom: white 2px solid;
+    transition: 0.4s;
+}
+
+.theme-switcher input {
+    padding: 5px;
+}
+
+.hero {
+    margin: 0 100px;
+    text-align: left;
+    padding: 50px 10px;
+}
+
+.hero p {
+    margin: 10px 0;
+}
+
+.hero h1 {
+    text-align: left;
+    font-size: 3.5rem;
+    margin: 20px 0;
+}
+
+.hero span {
+    color: #e74c3c;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 50%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 25px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #222121;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 110%;
+    left: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.autocomplete-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #0e0e0e;
+    display: block;  /* Certifica-se que cada item ocupe sua própria linha */
+}
+
+.autocomplete-item:hover {
+    background-color: #2e2929; 
+}
+
+.features {
+    position: relative;
+    margin: 25px auto;
+    overflow: hidden;
+    justify-content: start;
+}
+
+.feature {
+    display: none;
+    margin: 0 110px;
+}
+
+.feature.active {
+    display: block;
+}
+
+.feature img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    margin: 20px 0 10px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.prev:hover, .next:hover{
+    font-size: 2.25rem;
+    transition: 0.5s;
+}
+
+.prev {
+    left: 50px;
+}
+
+.next {
+    right: 50px;
+}
+
+.featureContent{
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+}
+
+.featureContent p{
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.featureContent h2{
+    color: #e74c3c;
+    font-size: 2.5rem;
+}
+
+.textContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.featureContent a{
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    max-width: fit-content;
+}
+
+.featureImg img{
+    width: 500px;
+}
+
+/*.features {
+    display: flex;
+    gap: 16px;
+    padding: 10px 10px;
+    max-width: 1000px;
+    margin: 10px 100px;
+}
+
+.feature {
+    text-align: left;
+    max-width: 300px;
+}
+
+.feature a{
+    text-decoration: none;
+    color: white;
+}
+
+.feature:hover{
+    max-width: 350px;
+    transition: 0.5s;
+}
+
+.feature img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.feature h2 {
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+}
+
+.feature p {
+    color: #ccc;
+}

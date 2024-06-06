@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lógica de Programação - Católica de Santa Catarina</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../iconeCatolica.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../home/index.html">
+                <img src="../assets/logoCatolica.png" alt="Católica de Santa Catarina">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../explorar/index.html">Explorar</a></li>
+                <li><a href="../content/index.html">Aprender</a></li>
+                <li><a href="../exercicios/index.html">Praticar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="../logica/index.html">Iniciando na Lógica</a></li>
+                <li><a href="../linguagemC/index.html">A linguagem C</a></li>
+                <li><a href="../bibliotecasC/index.html">Bibliotecas básicas em C</a></li>
+                <li><a href="../variaveis/index.html">Declaração de variáveis</a></li>
+                <li><a href="../entradasaida/index.html">Comandos de Entrada e Saída</a></li>
+                <li><a href="../condicional/index.html">Condicional</a></li>
+                <li><a href="../lacosrepeticao/index.html">Laços de Repetição</a></li>
+                <li><a href="../arduino/index.html">Conhecendo o Arduino</a></li>
+                <li><a href="../componentesarduino/index.html">Componentes básicos do Arduino</a></li>
+                <li><a href="../simuladoresrobotica/index.html">Simuladores de robótica</a></li>
+            </ul>
+        </aside>
+        <section class="content">
+            <h1>Componentes Básicos do Arduino</h1>
+            <section id="introducao">
+                <h2>Introdução</h2>
+                <p>Os componentes básicos do Arduino são os elementos essenciais utilizados para criar circuitos simples e avançados. Eles incluem LEDs para indicar status, botões para interação do usuário e resistores para limitar corrente e proteger os componentes.</p>
+            </section>
+            <section id="led">
+                <h2>LED</h2>
+                <p>O LED (Light Emitting Diode) é um componente que emite luz quando uma corrente elétrica passa por ele. No Arduino, os LEDs são comumente usados para indicar o estado de um circuito ou para fornecer feedback visual.</p>
+            </section>
+            <section id="button">
+                <h2>Botão</h2>
+                <p>Os botões são usados para fornecer entrada ao Arduino. Eles são dispositivos simples que, quando pressionados, conectam dois terminais elétricos, permitindo que a corrente flua. No Arduino, os botões são frequentemente usados para acionar ações específicas do usuário.</p>
+            </section>
+            <section id="resistor">
+                <h2>Resistor</h2>
+                <p>Os resistores são componentes usados para limitar o fluxo de corrente em um circuito. Eles são fundamentais para proteger componentes sensíveis e para garantir que os LEDs e outros dispositivos não recebam uma corrente elétrica excessiva, o que pode danificá-los.</p>
+            </section>
+            <section id="exemplos">
+                <h2>Exemplos de Código</h2>
+                <h3>Blink com LED</h3>
+                <p>O exemplo Blink é adaptado para acender e apagar um LED conectado ao Arduino em intervalos regulares.</p>
+                <pre><code>int ledPin = 13;
+
+void setup() {
+  pinMode(ledPin, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledPin, HIGH);
+  delay(1000);
+  digitalWrite(ledPin, LOW);
+  delay(1000);
+}</code></pre>
+                <h3>Ler estado do Botão</h3>
+                <p>Este exemplo mostra como ler o estado de um botão e imprimir o estado no monitor serial.</p>
+                <pre><code>int buttonPin = 2;
+int buttonState = 0;
+
+void setup() {
+  pinMode(buttonPin, INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  buttonState = digitalRead(buttonPin);
+  Serial.println(buttonState);
+  delay(100);
+}</code></pre>
+            </section>
+        </section>
+        <aside class="sidebar-right">
+            <h3>Neste artigo</h3>
+            <ul>
+                <li><a href="#introducao">introdução</a></li>
+                <li><a href="#led">LEDs</a></li>
+                <li><a href="#button">Botão</a></li>
+                <li><a href="#resistor">Resistores</a></li>
+                <li><a href="#exemplos">Exemplos</a></li>
+            </ul>
+        </aside>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
