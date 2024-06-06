@@ -54,34 +54,34 @@ document.getElementById("myInput").addEventListener("input", function() {
                 // Switch case para redirecionamento
                 switch (item) {
                     case "Arduino":
-                        window.location.href = "../arduino/index.html";
+                        window.location.href = "./arduino/index.html";
                         break;
                     case "Bibliotecas C":
-                        window.location.href = "../bibliotecasC/index.html";
+                        window.location.href = "./bibliotecasC/index.html";
                         break;
                     case "Componentes Arduino":
-                        window.location.href = "../componentesarduino/index.html";
+                        window.location.href = "./componentesarduino/index.html";
                         break;
                     case "Condicional":
-                        window.location.href = "../condicional/index.html";
+                        window.location.href = "./condicional/index.html";
                         break;
                     case "Laços de Repetição":
-                        window.location.href = "../lacosrepeticao/index.html";
+                        window.location.href = "./lacosrepeticao/index.html";
                         break;
                     case "Entrada e Saída":
-                        window.location.href = "../entradasaida/index.html";
+                        window.location.href = "./entradasaida/index.html";
                         break;
                     case "Linguagem C":
-                        window.location.href = "../linguagemC/index.html";
+                        window.location.href = "./linguagemC/index.html";
                         break;
                     case "Lógica":
-                        window.location.href = "../logica/index.html";
+                        window.location.href = "./logica/index.html";
                         break;
                     case "Simuladores de Robótica":
-                        window.location.href = "../simuladoresrobotica/index.html";
+                        window.location.href = "./simuladoresrobotica/index.html";
                         break;
                     case "Variáveis":
-                        window.location.href = "../variaveis/index.html";
+                        window.location.href = "./variaveis/index.html";
                         break;
                     default:
                         break;
